@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'devices',
+    'account'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',  ##添加此项目
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -51,6 +53,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# 允许跨域的地址
+CORS_ORIGIN_WHITELIST = (
+    "http://localhost:8080"
+)
+# CORS_ORIGIN_ALLOW_ALL = True
+
+
+APPEND_SLASH = False
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
