@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb2d9c65-0cec-47ce-9e33-dd99fcfee373" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/devices/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/devices/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/views/Home.vue" beforeDir="false" />
-    </list>
+    <list default="true" id="cb2d9c65-0cec-47ce-9e33-dd99fcfee373" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/backend/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+            <state relative-caret-position="177">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -65,23 +43,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/backend/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="283">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/account/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -213,15 +182,16 @@
       <option name="presentableId" value="Default" />
       <updated>1559092540559</updated>
       <workItem from="1559092543646" duration="9638000" />
-      <workItem from="1559119020878" duration="648000" />
+      <workItem from="1559119020878" duration="1137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10286000" />
+    <option name="totallyTimeSpent" value="10775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -234,7 +204,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="manage.py@IoT_device_client" order="8" visible="true" weight="0.45750707" />
+      <window_info active="true" anchor="bottom" id="manage.py@IoT_device_client" order="8" visible="true" weight="0.43909347" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -289,8 +259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/backend/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="177">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
@@ -311,27 +281,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/backend/urls.py">
+    <entry file="file://$PROJECT_DIR$/backend/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="275">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/manage.py">
+    <entry file="file://$PROJECT_DIR$/backend/backend/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="283">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
