@@ -53,12 +53,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_CREDENTIALS = True
 # 允许跨域的地址
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:8080"
 )
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
+
+class DisableCSRFCheck(object):
+    def process_request(self, request):
+        setattr(request, '_dont_enforce_csrf_checks', True)
+
+
+MIDDLEWARE_CLASSES = 'DisableCSRFCheck'
 
 APPEND_SLASH = False
 ROOT_URLCONF = 'backend.urls'
