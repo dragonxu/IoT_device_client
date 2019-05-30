@@ -6,7 +6,13 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted() {
+    this.$Message.config({
+    top: 50,
+    duration: 2
+    });
+  },
 }
 </script>
 
