@@ -51,6 +51,42 @@ export default [
     ]
   },
   {
+    path: '/outline',
+    name: 'outline',
+    component: Main,
+    meta: {
+      hideInBread: true
+    },
+    children: [
+      {
+        path: 'outline_view',
+        name: 'outline_view',
+        meta: {
+          title: '设备概览'
+        },
+        component: () => import('@/view/outline/outline.vue')
+      }
+    ]
+  },
+  {
+    path: '/gateway',
+    name: 'gateway',
+    component: Main,
+    meta: {
+      hideInBread: false
+    },
+    children: [
+      {
+        path: 'gateway_config',
+        name: 'gateway_config',
+        meta: {
+          title: '网关设置'
+        },
+        component: () => import('@/view/gateway/gateway.vue')
+      }
+    ]
+  },
+  {
     path: '',
     name: 'doc',
     meta: {
