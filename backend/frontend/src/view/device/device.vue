@@ -5,8 +5,8 @@
     <Button type="primary" icon="md-add-circle" @click='create_tcp'>添加TCP设备</Button>
     <Button  icon="md-add" @click='create_rtu'>添加RTU设备</Button>
     <Divider></Divider>
-    <tcp-device v-if="show_view=='tcp'"></tcp-device>
-    <rtu-device v-if="show_view=='rtu'"></rtu-device>
+    <tcp-device v-show="show_view=='tcp'"></tcp-device>
+    <rtu-device v-show="show_view=='rtu'"></rtu-device>
   </div>
 </template>
 

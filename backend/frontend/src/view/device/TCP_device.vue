@@ -7,7 +7,7 @@
                 <Input type="textarea" :rows="4" v-model="formValidate.description" style="width: 50%" placeholder="请输入设备描述"></Input>
             </FormItem>
             <FormItem label="设备地址" prop="slave">
-                    <Input v-model="formValidate.slave" number placeholder="可输入1-255之间的整数值" style="width: 50%" ></Input>
+                    <Input v-model="formValidate.slave" number placeholder="可输入1-247之间的整数值" style="width: 50%" ></Input>
                 </FormItem>
             <FormItem label="ip地址" prop="ip">
                 <Input v-model="formValidate.ip" placeholder="请输入正确的IP地址：例如：192.168.1.10" style="width: 50%"></Input>
