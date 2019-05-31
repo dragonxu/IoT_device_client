@@ -42,9 +42,9 @@
                     // 转为整形
                     value = value -0
                     if (!value)
-                        callback(new Error('please enter correct address(1-255)'))
-                    if (value < 0 || value > 255)
-                        callback(new Error('please enter correct address(1-255)'))
+                        callback(new Error('please enter correct address(1-247)'))
+                    if (value < 0 || value > 247)
+                        callback(new Error('please enter correct address(1-247)'))
                     else
                         callback();
                 };
