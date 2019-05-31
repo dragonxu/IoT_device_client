@@ -3,7 +3,7 @@
     <h2>>>网关配置</h2>
     <Divider></Divider>
     <Button type="primary" @click="modal1 = true">新建网关</Button>
-    <Button type="warning" :disabled="button_disabled">删除</Button>
+    <Button type="warning" :disabled="button_disabled" @click="del_confirm">删除</Button>
     <Modal v-model="modal1" title="Common Modal dialog box title" :styles="{top: '150px'}">
         <p slot="header">新建网关</p>
         <Card dis-hover :bordered="false">
@@ -23,6 +23,19 @@
                 <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
             </div>
     </Modal>
+    <Modal v-model="modal2" width="360">
+        <p slot="header" style="color:#f60;text-align:center">
+            <Icon type="ios-information-circle"></Icon>
+            <span>Delete confirmation</span>
+        </p>
+        <div style="text-align:center">
+            <p>删除网关：{{gateway_list}}子设备将一并删除，</p>
+            <p>是否继续删除？</p>
+        </div>
+        <div slot="footer">
+            <Button type="error" size="large" long @click="remove">删除</Button>
+        </div>
+    </Modal>
     <Divider></Divider>
     <v-gatewaylist ref='gatewaylist'></v-gatewaylist>
   </div>
@@ -36,6 +49,7 @@
       return {
         gateway_list: [],
         modal1: false,
+        modal2: false,
         formValidate:{
             gateway_name: '',
             description: ''
@@ -103,6 +117,33 @@
             this.$Message.error('Fail!');
         }
         })
+    },
+    del_confirm() {
+        this.modal2 = true
+      },
+    remove() {
+    axios.request({
+        url: 'api/gateway/delate',
+        method: 'post',
+        data:{name: this.gateway_list}
+    })
+    .then(res=>{
+        if(res.data.msg === 'ok'){
+            this.$Message.success('删除成功！')
+            this.$refs.gatewaylist.get_all_gateway()
+            this.gateway_list = []
+            this.modal2 = false
+        }
+        else this.$Message.error('删除失败！')
+            this.modal2 = false
+    })
+    .catch(error=>{
+        // this.$Message.error('删除失败！')
+        console.log(error)
+        this.modal2 = false
+    })
+
+    // this.$parent.gateway_list.splice(index, 1)
     },
     handleReset (name) {
         this.$refs[name].resetFields();

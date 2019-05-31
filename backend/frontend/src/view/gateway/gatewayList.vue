@@ -1,19 +1,11 @@
 <template>
   <div>
-    <Table border :columns="columns7" :data="data6"></Table>
-    <Modal v-model="modal2" width="360">
-      <p slot="header" style="color:#f60;text-align:center">
-        <Icon type="ios-information-circle"></Icon>
-        <span>Delete confirmation</span>
-      </p>
-      <div style="text-align:center">
-        <p>删除网关：{{del_gateway}}子设备将一并删除，</p>
-        <p>是否继续删除？</p>
-      </div>
-      <div slot="footer">
-        <Button type="error" size="large" long @click="remove">删除</Button>
-      </div>
-    </Modal>
+    <Table ref="selection" border stripe :columns="columns7" :data="data6" 
+    @on-select="handleSelect" @on-select-cancel='handleCancle'></Table>
+    <br>
+    <Button @click="handleSelectAll(true)">全选</Button>
+    <Button @click="handleSelectAll(false)">取消全选</Button>
+    
   </div>
 </template>
 <script>
@@ -24,11 +16,16 @@
     data() {
       return {
         modal2: false,
-        del_gateway: '',
         columns7: [
           {
+          type: 'selection',
+          width: 60,
+          align: 'center'
+          },
+          {
             title: '名称',
-            key: 'gateway_name'
+            key: 'gateway_name',
+            sortable: true
           },
           {
             title: '描述',
@@ -36,14 +33,20 @@
           },
           {
             title: '子设备数',
-            key: 'sub_device'
+            key: 'sub_device',
+            sortable: true,
+            width: 130,
+            align: 'center'
           },
           {
             title: '创建时间',
-            key: 'create_date'
+            key: 'create_date',
+            width: 150,
+            align: 'center',
+            sortable: true,
           },
           {
-            title: '创建时间',
+            title: '管理',
             key: 'aa',
             width: 150,
             align: 'center',
@@ -54,7 +57,7 @@
                   {
                     props: {
                       type: 'primary',
-                      size: 'small'
+                      // size: 'small'
                     },
                     style: {
                       width: '80%',
@@ -62,33 +65,12 @@
                     },
                     on: {
                       click: () => {
-                        this.show(params.index)
+                        this.$router.push({ path: '/device/device_manage/'+ params.row.gateway_name}) // -> /user/123
                       }
                     }
                   },
                   '管理子设备'
                 ),
-                h(
-                  'Button',
-                  {
-                    props: {
-                      type: 'error',
-                      size: 'small'
-                    },
-                    style: {
-                      // marginRight: '5px'
-                      // padding: '10px'
-                      width: '80%'
-                    },
-                    on: {
-                      click: () => {
-                        this.del_confirm(params.row.gateway_name);
-
-                      }
-                    }
-                  },
-                  '删除'
-                )
               ])
             }
           }
@@ -98,39 +80,38 @@
       }
     },
     methods: {
-      show(index) {
-        this.$Modal.info({
-          title: 'User Info',
-          content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${
-            this.data6[index].decription
-          }`
-        })
+      handleSelectAll (status) {
+          this.$refs.selection.selectAll(status);
+          if (status == true){
+            for(let i in this.data6){
+              this.$parent.gateway_list.push(i.gateway_name)
+            }
+          }
+          else
+            this.$parent.gateway_list = []
       },
-      del_confirm(name) {
-        console.log(name)
-        this.modal2 = true
-        this.del_gateway = name
+      handleSelect(selection, row){
+        this.$parent.gateway_list.push(row.gateway_name)
       },
-      remove() {
-        axios.request({
-          url: 'api/gateway/delate',
-          method: 'post',
-          data:{name: this.del_gateway}
-        })
-        .then(res=>{
-          if(res.data.msg === 'ok')
-            this.$Message.success('删除成功！')
-          else this.$Message.error('删除失败！')
-          this.modal2 = false
-          this.get_all_gateway()
-        })
-        .catch(error=>{
-          this.$Message.error('删除失败！')
-          console.log(error)
-        })
+      handleCancle(selection, row){
+        var data = this.$parent.gateway_list
+        for(let i in data){
+          if (data[i] == row.gateway_name){
+            this.$parent.gateway_list.splice(i,1)
+        }
+      }
 
-        // this.$parent.gateway_list.splice(index, 1)
       },
+      // show(index) {
+      //   this.$Modal.info({
+      //     title: 'User Info',
+      //     content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${
+      //       this.data6[index].decription
+      //     }`
+      //   })
+      // },
+  
+
       get_all_gateway(){
         axios.request({
           url: 'api/gateway/getAll'

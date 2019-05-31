@@ -23,7 +23,9 @@ def new(request):
 def delate(request):
     try:
         gateway_name = request.POST['name']
-        GatewayBase.objects.filter(gateway_name=gateway_name)[0].delete()
+        print(gateway_name)
+        for name in gateway_name.split(','):
+            GatewayBase.objects.get(gateway_name=name).delete()
         return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
     except Exception as e:
         print(e)
