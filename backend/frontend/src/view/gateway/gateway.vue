@@ -23,6 +23,20 @@
                 <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
             </div>
     </Modal>
+        <!-- 删除确认 -->
+    <Modal v-model="modal2" width="360">
+        <p slot="header" style="color:#f60;text-align:center">
+            <Icon type="ios-information-circle"></Icon>
+            <span>Delete confirmation</span>
+        </p>
+        <div style="text-align:center">
+            <p>删除网关{{ $store.state.current_gateway }}其子设备也一并删除</p>
+            <p>是否继续？</p>
+        </div>
+        <div slot="footer">
+            <Button type="error" size="large" long @click="remove">删除</Button>
+        </div>
+        </Modal>
  
     <Divider></Divider>
     <v-gatewaylist ref='gatewaylist'></v-gatewaylist>

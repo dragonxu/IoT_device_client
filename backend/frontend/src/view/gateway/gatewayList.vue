@@ -66,7 +66,7 @@
                     on: {
                       click: () => {
                         this.$store.commit('change_gateway', params.row.gateway_name)
-                        console.log(this.$store.state.current_gateway)
+                        // console.log(this.$store.state.current_gateway)
                         this.$router.push({ path: '/device/device_manage'}) 
                       }
                     }
