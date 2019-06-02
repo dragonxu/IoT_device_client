@@ -87,6 +87,58 @@ export default [
     ]
   },
   {
+    path: '/device',
+    name: 'device',
+    component: Main,
+    meta: {
+      hideInBread: true
+    },
+    
+    children: [
+      {
+        path: 'device_manage/:gateway_name',
+        name: '_device_manage',
+        meta: {
+          icon: 'logo-buffer',
+          title: '设备管理',
+          hideInBread: false
+        },
+        redirect: '/device/device_manage/show_list',
+        component: () => import('@/view/device/device.vue'),
+        children: [
+            {
+              path: 'show_list',
+              name: 'device_manage',
+              meta: {
+                // title: '设备管理',
+                hideInBread: true
+              },
+              component: () => import('@/view/device/show_list.vue')
+            },
+            {
+              path: 'add_tcp',
+              name: 'add_tcp',
+              meta: {
+                hideInBread: true,
+                hideInMenu: true
+              },
+              component: () => import('@/view/device/TCP_device.vue')
+            },
+            {
+              path: 'add_rtu',
+              name: 'add_rtu',
+              meta: {
+                hideInBread: true,
+                hideInMenu: true
+              },
+              component: () => import('@/view/device/RTU_device.vue')
+            }
+        ]
+      },
+
+    ]
+  },
+  {
     path: '',
     name: 'doc',
     meta: {

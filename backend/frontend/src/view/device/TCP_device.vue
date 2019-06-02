@@ -22,6 +22,7 @@
         </Form>
     </template>
     <script>
+        import axios from '@/libs/api.request'
         export default {
             name: 'TCP_device',
             data () {
@@ -65,6 +66,7 @@
                         ip: '127.0.0.1',
                         port: null,
                         slave: '',
+                        gateway_name: this.$store.state.current_gateway
                     },
                     // 写在return中
                     ruleValidate: {
@@ -90,9 +92,37 @@
                 handleSubmit (name) {
                     this.$refs[name].validate((valid) => {
                         if (valid) {
-                            this.$Message.success('Success!');
+                            axios.request({
+                                url: 'api/device/create_tcp',
+                                method: 'post',
+                                data: this.formValidate
+                            }).then(res=>{
+                                console.log(res.data)
+                                // this.$Message.success('创建成功')
+                                if(res.data.msg == 'ok'){
+                                    this.$Notice.success({
+                                        title: 'Note:',
+                                        desc: '添加成功'
+                                        });
+                                    this.$router.push('/device/device_manage')
+                                    // this.$parent.show_view = ''
+                                    }
+                                else{
+                                    this.$Notice.error ({
+                                    title: 'Note:',
+                                    desc: '创建失败！'
+                                    });
+                                }
+                            })
+                            .catch(error=>{
+                                console.log(error)
+                                this.$Notice.error ({
+                                    title: 'Notification title',
+                                    desc: '创建失败！'
+                                    });
+                            })
                         } else {
-                            this.$Message.error('Fail!');
+                            this.$Message.error('请填写正确参数!');
                         }
                     })
                 },

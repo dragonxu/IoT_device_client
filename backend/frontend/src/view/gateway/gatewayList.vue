@@ -65,7 +65,9 @@
                     },
                     on: {
                       click: () => {
-                        this.$router.push({ path: '/device/device_manage/'+ params.row.gateway_name}) // -> /user/123
+                        this.$store.commit('change_gateway', params.row.gateway_name)
+                        console.log(this.$store.state.current_gateway)
+                        this.$router.push({ path: '/device/device_manage'}) 
                       }
                     }
                   },
@@ -98,6 +100,7 @@
         for(let i in data){
           if (data[i] == row.gateway_name){
             this.$parent.gateway_list.splice(i,1)
+            return
         }
       }
 
@@ -120,6 +123,7 @@
           console.log(response.data)
           if (response.data.msg == 'ok')
           this.data6 = response.data.data
+          this.$store.commit('update_gateway_list', response.data.data)
         })
         .catch(error=>{
           console.log('get all gateway fail')

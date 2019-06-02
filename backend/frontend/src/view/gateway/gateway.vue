@@ -9,13 +9,13 @@
         <Card dis-hover :bordered="false">
             
             <Form ref="formValidate" :model="formValidate" :rules="ruleValidate">
-            <FormItem label="网关名称" prop="gateway_name">
-                <Input v-model="formValidate.gateway_name" placeholder="名称必须唯一"></Input>
-            </FormItem>
-            <FormItem label="描述" prop="description">
-                <Input type="textarea" :rows="4"  v-model="formValidate.description" placeholder="请填写描述信息"></Input>
-            </FormItem>
-            
+                <FormItem label="网关名称" prop="gateway_name">
+                    <Input v-model="formValidate.gateway_name" placeholder="名称必须唯一"></Input>
+                </FormItem>
+                <FormItem label="描述" prop="description">
+                    <Input type="textarea" :rows="4"  v-model="formValidate.description" placeholder="请填写描述信息"></Input>
+                </FormItem>
+                
             </Form>
         </Card>
         <div slot="footer">
@@ -23,27 +23,17 @@
                 <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
             </div>
     </Modal>
-    <Modal v-model="modal2" width="360">
-        <p slot="header" style="color:#f60;text-align:center">
-            <Icon type="ios-information-circle"></Icon>
-            <span>Delete confirmation</span>
-        </p>
-        <div style="text-align:center">
-            <p>删除网关：{{gateway_list}}子设备将一并删除，</p>
-            <p>是否继续删除？</p>
-        </div>
-        <div slot="footer">
-            <Button type="error" size="large" long @click="remove">删除</Button>
-        </div>
-    </Modal>
+ 
     <Divider></Divider>
     <v-gatewaylist ref='gatewaylist'></v-gatewaylist>
   </div>
 </template>
 
 <script>
+//  import { mapMutations } from 'vuex'
  import axios from '@/libs/api.request'
  import gatewayList from './gatewayList.vue'
+ 
   export default {
     data() {
       return {

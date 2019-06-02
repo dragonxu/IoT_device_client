@@ -1,41 +1,93 @@
 <template>
   <div>
-    <h1>网关：{{ gateway_name }}</h1>
+    <h1>网关： {{ $store.state.current_gateway }}</h1>
     <Divider style="padding: 0%"></Divider>
-    <Button type="primary" icon="md-add-circle" @click='create_tcp'>添加TCP设备</Button>
-    <Button  icon="md-add" @click='create_rtu'>添加RTU设备</Button>
+    <Button type="primary" icon="md-add-circle" @click="add_tcp">添加TCP设备</Button>
+    <Button icon="md-add" @click="add_rtu">添加RTU设备</Button>
+    <Button type="warning" :disabled="$store.getters.selected_device_count" @click="del_confirm">删除</Button>
+
+    <!-- 删除确认 -->
+    <Modal v-model="flag" width="360">
+      <p slot="header" style="color:#f60;text-align:center">
+        <Icon type="ios-information-circle"></Icon>
+        <span>Delete confirmation</span>
+      </p>
+      <div style="text-align:center">
+        <p>删除网关子设备：{{ $store.state.selected_device }}</p>
+        <p>是否继续删除？</p>
+      </div>
+      <div slot="footer">
+        <Button type="error" size="large" long @click="delate_device_a">删除</Button>
+      </div>
+    </Modal>
     <Divider></Divider>
-    <tcp-device v-show="show_view=='tcp'"></tcp-device>
-    <rtu-device v-show="show_view=='rtu'"></rtu-device>
+    <!-- <tcp-device v-show="show_view=='tcp'"></tcp-device>
+    <rtu-device v-show="show_view=='rtu'"></rtu-device> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import RTU_device from './RTU_device.vue'
-  import TCP_device from './TCP_device.vue'
+  // import RTU_device from './RTU_device.vue'
+  // import TCP_device from './TCP_device.vue'
+  import { delate_device, get_all_device } from '@/api/device.js'
+  import show_list from './show_list.vue'
   export default {
     data() {
       return {
-        show_view: '',
-        gateway_name: ''
+        flag: false
       }
     },
-    components:{
-        'tcp-device': TCP_device,
-        'rtu-device': RTU_device
-    },
-    methods: {
-        create_tcp(){
-            this.show_view ='tcp'
 
-        },
-        create_rtu(){
-            this.show_view = 'rtu'
-        }
+    computed: {
+      button_disabled() {
+        if (this.$store.state.selected_device.length > 0) return false
+        else return true
+      }
     },
-    mounted() {
-      // 获取路由参数
-      this.gateway_name = this.$route.params.gateway_name
+
+    methods: {
+      del_confirm() {
+        // 验证是否选定网关
+        // if (!this.$store.state.current_gateway)
+        //    this.$Message.warning('请先选择网关！')
+        // else this.flag = true
+        this.flag = true
+      },
+
+      delate_device_a() {
+        // delate_device({ device: this.$store.state.selected_device, gateway_name: this.$store.state.current_gateway })
+        delate_device({ device: JSON.stringify(this.$store.state.selected_device)})
+          .then(res => {
+            console.log(res.data)
+            if (res.data.msg == 'ok') {
+              this.$Message.success('删除成功！')
+              this.$store.commit('update_gateway_list', [])
+              this.$router.push('/gateway/gateway_config')
+              // this.$router.replace('/device/device_manage')
+            } else {
+              this.$Message.success('删除失败！')
+            }
+          })
+          .catch(error => {
+            this.$Message.success('删除失败！')
+            console.log(error)
+          })
+        this.flag = false
+      },
+
+      add_tcp() {
+        this.$router.push({ name: 'add_tcp' })
+      },
+
+      add_rtu() {
+        this.$router.push({ name: 'add_rtu' })
+      }
     }
+    // created() {
+    //   获取路由参数
+    //   this.gateway_name = this.$route.params.gateway_name
+    //   this.$store.commit('change_gateway', this.$route.params.gateway_name)
+    // }
   }
 </script>
