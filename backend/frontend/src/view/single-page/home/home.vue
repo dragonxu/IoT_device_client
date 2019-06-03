@@ -30,9 +30,10 @@
 </template>
 
 <script>
-// import axios from '@/libs/api.request'
-// import Axios from 'axios'
 import axios from '@/libs/api.request'
+// import Axios from 'axios'
+// import axios from '@/libs/api.request'
+// import axios from 'axios'
 import InforCard from '_c/info-card'
 import CountTo from '_c/count-to'
 import { ChartPie, ChartBar } from '_c/charts'
@@ -78,17 +79,27 @@ export default {
     //
   },
   methods: {
+    transform(data){
+      let param = new URLSearchParams()
+      for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+          param.append(key, data[key])
+        }
+      }
+      return param;
+  },
     test(){
       axios.request({
-        url:'api/test/',
-        method: 'get'
+        method: 'post',
+        url:'api/gateway/new', 
+        data: {gateway_id: 'a', description: 'c'}
       })
       .then((response) => {
           console.log(response);
       })
       .catch((error) => {
-        console.log(error);
-      })
+          console.log(error);
+      });
     }
   },
 }

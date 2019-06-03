@@ -19,9 +19,9 @@
             </Form>
         </Card>
         <div slot="footer">
-                <Button type="primary" @click="handleSubmit('formValidate')">确定</Button>
-                <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
-            </div>
+            <Button type="primary" @click="handleSubmit('formValidate')">确定</Button>
+            <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
+        </div>
     </Modal>
         <!-- 删除确认 -->
     <Modal v-model="modal2" width="360">
