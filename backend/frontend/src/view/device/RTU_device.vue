@@ -32,7 +32,8 @@
             </Select>
         </FormItem>
         <FormItem>
-            <Button type="primary" @click="handleSubmit('formValidate')">确认</Button>
+            <Button type="primary" v-if="!edit" @click="handleSubmit('formValidate')">确认</Button>
+            <Button type="primary" v-if="edit" @click="handleSubmit('formValidate')">修改</Button>
             <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
         </FormItem>
     </Form>
@@ -41,7 +42,7 @@
 <script>
     import axios from '@/libs/api.request'
     export default {
-        name: 'RTU_device',
+        name: 'add_rtu',
         data () {
             const checkSlave = (rule, value, callback) =>{
                 // 转为整形
@@ -54,6 +55,7 @@
                     callback();
             };
             return {
+                edit: false,
                 baudRateList: [
                     {
                         value: '300',
@@ -142,6 +144,7 @@
                 ],
                 formValidate: {
                     name: '',
+                    edit_name : '',
                     description: '',
                     baudRate: '9600',
                     biteSize: 8,
@@ -158,15 +161,15 @@
                     baudRate: [
                         { required: true, message: 'cannot be empty', trigger: 'blur' }
                     ],
-                    biteSize: [
-                        { required: true, message: 'cannot be empty', trigger: 'blur' }
-                    ],
+                    // biteSize: [
+                    //     { required: true, message: 'cannot be empty', trigger: 'blur' }
+                    // ],
                     parity: [
                         { required: true, message: 'Cannot be empty', trigger: 'blur' }
                     ],
-                    stopbits: [
-                        { required: true, message: 'cannot be empty', trigger: 'blur' }
-                    ],
+                    // stopbits: [
+                    //     { required: true, message: 'cannot be empty', trigger: 'blur' }
+                    // ],
                     slave: [
                         { required: true, validator: checkSlave, trigger: 'blur' }
                     ],
@@ -178,7 +181,7 @@
                 this.$refs[name].validate((valid) => {
                     if (valid) {
                         axios.request({
-                            url: 'api/device/create_tcp',
+                            url: 'api/device/create_rtu',
                             method: 'post',
                             data: this.formValidate
                         }).then(res=>{
@@ -187,7 +190,7 @@
                             if(res.data.msg == 'ok'){
                                 this.$Notice.success({
                                     title: 'Note:',
-                                    desc: '添加成功'
+                                    desc: '成功'
                                     });
                                 this.$router.push('/device/device_manage')
                                 // this.$parent.show_view = ''
@@ -214,6 +217,20 @@
             handleReset (name) {
                 this.$refs[name].resetFields();
             }
-        }
+        },
+        mounted() {
+            let query = this.$route.query
+            console.log('参数：',query)
+            if(query){
+                this.formValidate.edit_name = query.name
+                this.formValidate.name = query.name
+                this.formValidate.description = query.description
+                this.formValidate.slave = query.slave
+                if(query.edit){
+                    this.edit = true
+                }
+            }
+        },
     }
+
 </script>

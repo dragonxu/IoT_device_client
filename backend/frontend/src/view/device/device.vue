@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h1>网关： {{ $store.state.current_gateway }}</h1>
+    <!-- <h1>网关： {{ $store.state.current_gateway }}</h1> -->
+    <!-- <Button type="text" ></Button><Icon type="ios-cog" size="25"/>选择网关:</Button> -->
+    <h1>选择网关：</h1>
+    <Select v-model="$store.state.current_gateway" style="width:200px" icon="ios-cog">
+        <Option v-for="(item, index) in  $store.state.gateway_list" :value="item" :key="index">{{ item }}</Option>
+    </Select>
     <Divider style="padding: 0%"></Divider>
     <Button type="primary" icon="md-add-circle" @click="add_tcp">添加TCP设备</Button>
     <Button icon="md-add" @click="add_rtu">添加RTU设备</Button>
@@ -21,15 +26,12 @@
       </div>
     </Modal>
     <Divider></Divider>
-    <!-- <tcp-device v-show="show_view=='tcp'"></tcp-device>
-    <rtu-device v-show="show_view=='rtu'"></rtu-device> -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  // import RTU_device from './RTU_device.vue'
-  // import TCP_device from './TCP_device.vue'
+  import axios from '@/libs/api.request'
   import { delate_device, get_all_device } from '@/api/device.js'
   import show_list from './show_list.vue'
   export default {
@@ -57,14 +59,15 @@
 
       delate_device_a() {
         // delate_device({ device: this.$store.state.selected_device, gateway_name: this.$store.state.current_gateway })
-        delate_device({ device: JSON.stringify(this.$store.state.selected_device)})
+        delate_device({ device: JSON.stringify(this.$store.state.selected_device) })
           .then(res => {
             console.log(res.data)
             if (res.data.msg == 'ok') {
               this.$Message.success('删除成功！')
-              this.$store.commit('update_gateway_list', [])
-              this.$router.push('/gateway/gateway_config')
-              // this.$router.replace('/device/device_manage')
+              // this.$store.commit('update_gateway_list', [])
+              // this.$destroy()
+              // this.$router.push('/gateway/gateway_config')
+              this.$router.push('/device/device_manage')
             } else {
               this.$Message.success('删除失败！')
             }
@@ -83,11 +86,27 @@
       add_rtu() {
         this.$router.push({ name: 'add_rtu' })
       }
-    }
+    },
     // created() {
     //   获取路由参数
     //   this.gateway_name = this.$route.params.gateway_name
     //   this.$store.commit('change_gateway', this.$route.params.gateway_name)
     // }
+    mounted() {
+      if (this.$store.state.current_gateway) {
+        axios
+          .request({
+            url: 'api/gateway/getAll'
+          })
+          .then(response => {
+            if (response.data.msg == 'ok') 
+              this.$store.commit('update_gateway_list', response.data.data)
+          })
+      }
+    },
+    destroy(){
+      this.$router.push('/gateway/gateway_config')
+      console.log('销毁')
+    }
   }
 </script>

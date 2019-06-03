@@ -16,7 +16,8 @@
                 <Input v-model="formValidate.port" number style="width: 50%"></Input>
             </FormItem>
             <FormItem>
-                <Button type="primary" @click="handleSubmit('formValidate')">确认</Button>
+                <Button type="primary" v-if="!edit" @click="handleSubmit('formValidate')">确认</Button>
+                <Button type="primary" v-if="edit" @click="handleSubmit('formValidate')">修改</Button>
                 <Button @click="handleReset('formValidate')" style="margin-left: 8px">重置</Button>
             </FormItem>
         </Form>
@@ -24,7 +25,7 @@
     <script>
         import axios from '@/libs/api.request'
         export default {
-            name: 'TCP_device',
+            name: 'add_tcp',
             data () {
                 // 注意写在return上方
                 const checkIP= (rule, value, callback) =>{
@@ -60,8 +61,10 @@
                         callback();
                 };
                 return {
+                    edit: false,
                     formValidate: {
                         name: '',
+                        edit_name : '',
                         description: '',
                         ip: '127.0.0.1',
                         port: null,
@@ -102,7 +105,7 @@
                                 if(res.data.msg == 'ok'){
                                     this.$Notice.success({
                                         title: 'Note:',
-                                        desc: '添加成功'
+                                        desc: '成功'
                                         });
                                     this.$router.push('/device/device_manage')
                                     // this.$parent.show_view = ''
@@ -129,7 +132,22 @@
                 handleReset (name) {
                     this.$refs[name].resetFields();
                 }
+            },
+        mounted() {
+            let query = this.$route.query
+            console.log('参数：',query)
+            if(query){
+                this.formValidate.edit_name = query.name
+                this.formValidate.name = query.name
+                this.formValidate.description = query.description
+                this.formValidate.ip = '127.0.0.1'
+                this.formValidate.port = '502'
+                this.formValidate.slave = query.slave
+                if(query.edit){
+                    this.edit = true
+                }
             }
+        },
         }
     </script>
     

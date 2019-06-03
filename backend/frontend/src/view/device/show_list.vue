@@ -40,7 +40,7 @@
         columns1: [
           {
             type: 'selection',
-            width: 40,
+            width: 50,
             align: 'center'
           },
           {
@@ -91,7 +91,63 @@
           {
             title: '创建时间',
             key: 'create_time',
+            width: 150,
             sortable: true
+          },
+          {
+            title: '操作',
+            key: 'aa',
+            // width: 150,
+            align: 'center',
+            render: (h, params) => {
+              return h('div', [
+              h(
+                  'a',
+                  {
+                    props: {
+                    },
+                    style: {
+                      marginLeft: '0px'
+                    },
+                    on: {
+                      click: () => {
+                        console.log(params.row)
+                        let query = params.row
+                        query.edit = true
+                        if(params.row.protocal == 'TCP'){
+                          this.$router.push({ path: '/device/device_manage/add_tcp', query}) 
+                        }
+                        else  
+                         this.$router.push({ path: '/device/device_manage/add_rtu', query}) 
+                      }
+                    }
+                  },
+                  '修改 / '
+                ),
+                h(
+                  'a',
+                  {
+                    props: {
+                      // type: 'primary',
+                      // size: 'small'
+                    },
+                    style: {
+                      // width: '80%',
+                      marginLeft: '0px'
+                    },
+                    on: {
+                      click: () => {
+                        // this.$store.commit('change_gateway', params.row.gateway_name)
+                        // // console.log(this.$store.state.current_gateway)
+                         console.log('111111111')
+                      }
+                    }
+                  },
+                  '查看详情'
+                ),
+
+              ])
+            }
           }
         ]
       }
