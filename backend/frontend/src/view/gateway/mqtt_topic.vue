@@ -173,7 +173,7 @@
                             this.get_all_topic()
                             this.$Notice.success({
                                 title: 'Note:',
-                                desc: '成功'
+                                desc: '创建成功！'
                                 });
                             }
                         else{
@@ -202,7 +202,6 @@
                                 title: 'Note:',
                                 desc: '修改成功'
                                 });
-                                this.get_all_topic()
                             }
                         else{
                             this.$Notice.error ({

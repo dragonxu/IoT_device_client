@@ -1,17 +1,20 @@
 <template>
    <div>
     <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80" size='large'>
-        <FormItem label="主机地址(host)" prop="host">
-            <Input v-model="formValidate.host" placeholder="物联网平台地址" style="width: 50%"></Input>
+        <FormItem label="主机地址(host)" prop="host" >
+            <Input v-model="formValidate.host" placeholder="物联网平台地址" :disabled="edit" style="width: 50%"></Input>
         </FormItem>
         <FormItem label="端口号" prop="port">
-            <Input v-model="formValidate.port" placeholder="" style="width: 50%"></Input>
+            <Input v-model="formValidate.port" :disabled="edit" style="width: 50%"></Input>
         </FormItem>
         <FormItem label="认证口令(token)" prop="token">
-            <Input v-model="formValidate.token" placeholder="" style="width: 50%"></Input>
+            <Input v-model="formValidate.token" :disabled="edit" style="width: 50%"></Input>
+        </FormItem>
+        <FormItem label="缓存大小" prop="cache">
+            <Input v-model="formValidate.cache" :disabled="edit" style="width: 20%"></Input>M/b
         </FormItem>
         <FormItem label="描述" prop="description">
-            <Input type="textarea" :rows="4" v-model="formValidate.description" style="width: 50%" placeholder="请输入描述"></Input>
+            <Input type="textarea" :rows="4" v-model="formValidate.description" :disabled="edit" style="width: 50%" placeholder="请输入描述"></Input>
         </FormItem>
         <FormItem>
             <Button type="primary" :disabled='edit' @click="handleSubmit">提交</Button>
@@ -53,7 +56,8 @@ data() {
             host: '60.205.202.24',
             port: '31883',
             token: 'ooYKWsZZXuGqDWkRYCPZ',
-            description: '物联网平台'
+            description: '物联网平台',
+            cache: 500
         },
         ruleValidate: {
             host: [

@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb2d9c65-0cec-47ce-9e33-dd99fcfee373" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/config/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/IoT_device_client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoT_device_client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d5e64367-00cb-46ff-bfed-d91b55640aad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d5e64367-00cb-46ff-bfed-d91b55640aad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/mqtt_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/mqtt_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/frontend/src/router/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/router/routers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/gateway/gateway.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/gateway/gateway.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/single-page/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/single-page/home/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/gateway/mqtt_config.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/gateway/mqtt_config.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/gateway/mqtt_topic.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/gateway/mqtt_topic.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/gateway/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,10 +59,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/gateway/urls.py">
+        <entry file="file://$PROJECT_DIR$/backend/task/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="100">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -69,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/gateway/views.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/task/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="106" column="87" selection-start-line="106" selection-start-column="87" selection-end-line="106" selection-end-column="87" />
+            <state relative-caret-position="-650">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -81,22 +82,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mqtt_config.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/gateway/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
+            <state relative-caret-position="150">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/gateway/models.py">
+        <entry file="file://$PROJECT_DIR$/backend/task/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="17" column="15" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="15" />
+            <state relative-caret-position="150">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#1#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,14 +125,17 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/backend/backend/__init__.py" />
         <option value="$PROJECT_DIR$/backend/account/models.py" />
-        <option value="$PROJECT_DIR$/backend/backend/settings.py" />
-        <option value="$PROJECT_DIR$/backend/backend/urls.py" />
         <option value="$PROJECT_DIR$/backend/devices/urls.py" />
         <option value="$PROJECT_DIR$/backend/devices/models.py" />
         <option value="$PROJECT_DIR$/backend/devices/views.py" />
         <option value="$PROJECT_DIR$/backend/gateway/models.py" />
         <option value="$PROJECT_DIR$/backend/gateway/urls.py" />
+        <option value="$PROJECT_DIR$/backend/backend/settings.py" />
+        <option value="$PROJECT_DIR$/backend/backend/urls.py" />
         <option value="$PROJECT_DIR$/backend/gateway/views.py" />
+        <option value="$PROJECT_DIR$/backend/task/urls.py" />
+        <option value="$PROJECT_DIR$/backend/task/models.py" />
+        <option value="$PROJECT_DIR$/backend/task/views.py" />
       </list>
     </option>
   </component>
@@ -160,6 +167,12 @@
               <item name="IoT_device_client" type="b2602c69:ProjectViewProjectNode" />
               <item name="IoT_device_client" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IoT_device_client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IoT_device_client" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="devices" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -167,6 +180,12 @@
               <item name="IoT_device_client" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="gateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IoT_device_client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IoT_device_client" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -288,21 +307,21 @@
       <updated>1559092540559</updated>
       <workItem from="1559092543646" duration="9638000" />
       <workItem from="1559119020878" duration="38537000" />
-      <workItem from="1559304260267" duration="47770000" />
+      <workItem from="1559304260267" duration="51673000" />
+      <workItem from="1559553756984" duration="10034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95945000" />
+    <option name="totallyTimeSpent" value="109882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16554959" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16756032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37252125" />
@@ -318,10 +337,11 @@
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.41784704" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.24597855" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.24597855" />
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
   </component>
@@ -393,13 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/backend/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="71" column="20" lean-forward="true" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/gateway_gatewaybase">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -428,33 +441,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mqtt_config.json" />
     <entry file="file://$PROJECT_DIR$/backend/config/mqtt_config.json">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="80" lean-forward="true" selection-start-column="80" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/backend/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/devices/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="131">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/backend/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/devices/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="154">
+          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -463,28 +478,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/devices/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        <state relative-caret-position="75">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/backend/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/gateway/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/gateway/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="139">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -500,18 +515,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/gateway/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="106" column="87" selection-start-line="106" selection-start-column="87" selection-end-line="106" selection-end-column="87" />
+        <state relative-caret-position="131">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mqtt_config.json">
+    <entry file="file://$PROJECT_DIR$/backend/task/models.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#1#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/gateway/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/task/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/task_task">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/task/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-650">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

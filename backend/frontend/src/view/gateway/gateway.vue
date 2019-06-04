@@ -2,7 +2,7 @@
   <div id="gateway">
     <h2>>>网关配置</h2>
     <Divider></Divider>
-    <Button type="primary" @click="modal1 = true">新建网关</Button>
+    <Button type="primary" @click="modal1 = true" icon="md-add-circle" >新建网关</Button>
     <Button type="warning" :disabled="button_disabled" @click="del_confirm">删除</Button>
     <Modal v-model="modal1" title="Common Modal dialog box title" :styles="{top: '150px'}">
         <p slot="header">新建网关</p>
