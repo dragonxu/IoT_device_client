@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/device/', include('devices.urls')),
     path('api/gateway/', include('gateway.urls')),
+    path('api/task/', include('task.urls')),
     path('', TemplateView.as_view(template_name='index.html'))
 ]

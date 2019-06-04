@@ -73,16 +73,33 @@ export default [
     name: 'gateway',
     component: Main,
     meta: {
-      hideInBread: false
+      icon: 'md-menu',
+      title: '网关配置'
     },
     children: [
       {
         path: 'gateway_config',
         name: 'gateway_config',
         meta: {
-          title: '网关设置'
+          title: '网关设备管理'
         },
         component: () => import('@/view/gateway/gateway.vue')
+      },
+      {
+        path: 'mqtt_config',
+        name: 'mqtt_config',
+        meta: {
+          title: 'MQTT传输配置'
+        },
+        component: () => import('@/view/gateway/mqtt_config.vue')
+      },
+      {
+        path: 'mqtt_topic',
+        name: 'mqtt_topic',
+        meta: {
+          title: 'MQTT主题配置'
+        },
+        component: () => import('@/view/gateway/mqtt_topic.vue')
       }
     ]
   },
@@ -96,7 +113,7 @@ export default [
     
     children: [
       {
-        path: 'device_manage/:gateway_name',
+        path: 'device_manage',
         name: '_device_manage',
         meta: {
           icon: 'logo-buffer',
@@ -110,8 +127,9 @@ export default [
               path: 'show_list',
               name: 'device_manage',
               meta: {
-                // title: '设备管理',
-                hideInBread: true
+                title: '子设备管理',
+                hideInBread: true,
+                notCache: true,
               },
               component: () => import('@/view/device/show_list.vue')
             },
@@ -120,7 +138,8 @@ export default [
               name: 'add_tcp',
               meta: {
                 hideInBread: true,
-                hideInMenu: true
+                hideInMenu: true,
+                notCache: true,
               },
               component: () => import('@/view/device/TCP_device.vue')
             },
@@ -128,14 +147,35 @@ export default [
               path: 'add_rtu',
               name: 'add_rtu',
               meta: {
-                hideInBread: true,
-                hideInMenu: true
+                hideInBread: false,
+                hideInMenu: true,
+                notCache: true,
               },
               component: () => import('@/view/device/RTU_device.vue')
             }
         ]
       },
 
+    ]
+  },
+  {
+    path: '/task',
+    name: 'task',
+    component: Main,
+    meta: {
+      hideInBread: true
+    },
+    children: [
+      {
+        path: 'program',
+        name: 'program',
+        meta: {
+          icon: 'md-cloud-upload',
+          title: '采集任务',
+          notCache: true,
+        },
+        component: () => import('@/view/task/task.vue')
+      }
     ]
   },
   {

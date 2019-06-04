@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'devices',
     'account',
-    'gateway'
+    'gateway',
+    'task',
 ]
 
 MIDDLEWARE = [
