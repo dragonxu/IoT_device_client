@@ -87,6 +87,7 @@ def delate(request):
         for i in device:
             print(i, '----------')
             TCP_device.objects.filter(device_name=i['name'], gateway_name=i['gateway']).delete()
+            RTU_device.objects.filter(device_name=i['name'], gateway_name=i['gateway']).delete()
         return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
     except Exception as e:
         print(str(e))

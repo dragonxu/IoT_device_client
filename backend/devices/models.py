@@ -27,3 +27,10 @@ class RTU_device(models.Model):
     last_active = models.DateField(auto_now=True)
     work_flag = models.BooleanField(default=True, verbose_name='激活状态')
     gateway_name = models.ForeignKey(GatewayBase, on_delete=models.CASCADE, to_field='gateway_name')
+
+
+class Attribute(models.Model):
+    code = models.IntegerField()
+    category = models.CharField(max_length=20, null=False)
+    identifier = models.CharField(max_length=10, null=False)
+    name = models.CharField(max_length=20, null=False)
