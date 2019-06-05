@@ -172,11 +172,23 @@ export default [
         meta: {
           icon: 'md-cloud-upload',
           title: '采集任务',
-          notCache: true,
+          // notCache: true,
         },
         component: () => import('@/view/task/task.vue')
+      },
+      {
+        path: 'sub_task/:task_name',
+        name: 'sub_task',
+        meta: {
+          icon: 'md-cloud-upload',
+          title: '采集子任务',
+          hideInMenu: true,
+          hideInBread: true,
+          notCache: true,
+        },
+        component: () => import('@/view/task/sub_task.vue')
       }
-    ]
+    ],
   },
   {
     path: '',

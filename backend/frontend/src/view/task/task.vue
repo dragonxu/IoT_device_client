@@ -4,7 +4,6 @@
         <Button type="primary" @click="addTask" icon="md-add-circle" >新建任务</Button>
         <Button type="warning" :disabled="button_disabled" @click='del_confirm=true'>删除</Button>
         <Divider></Divider>
-      
         <Table
             ref="table"
             :columns="columns1"
@@ -65,12 +64,17 @@
       
 <script>
 import axios from '@/libs/api.request'
+import sub_task from './sub_task'
 export default {
     name: 'task',
+    components:{
+        'v-subtask': sub_task
+    },
     data() {
     return {
         show: false,
         del_confirm: false,
+        collect_status: '',
         temp_task: '',
         taskList: [],
         select_task : [],
@@ -144,7 +148,7 @@ export default {
         {
             title: '协议',
             key: 'protocol',
-            width: 150,
+            width: 100,
             sortable: true
         },
         {
@@ -154,10 +158,12 @@ export default {
         {
             title: '数据来源',
             key: 'gateway',
+            width: 100,
         },
         {
             title: '创建时间',
             key: 'create_time',
+            width: 140,
         },
         {
             title: '数据来源',
@@ -177,14 +183,16 @@ export default {
                             if(params.row.status == 'false')
                                 {
                                     params.row.status = 'true'
+                                    this.collect_status = true
                                 }
-                            else
+                            else{
                                 params.row.status = 'false'
-                            
+                                this.collect_status = false
+                            }
                         }
                     }
                     },
-            '切换状态/ '),
+            '切换状态 / '),
             h('a',
                 {
                     style: {
@@ -208,6 +216,12 @@ export default {
                     on: {
                         click: () => {
                             console.log('11111')
+                            this.$router.push({name: 'sub_task', 
+                                params: {task_name: params.row.name},
+                                query:{
+                                    gateway: params.row.gateway
+                                }
+                            })
                         }
                     }
                     },

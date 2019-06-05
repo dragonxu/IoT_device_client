@@ -50,7 +50,6 @@ def create_rtu(request):
 
 def get_all(request):
     gateway_name = request.POST.get('gateway_name')
-
     if gateway_name:
         all_tcp = TCP_device.objects.filter(gateway_name=gateway_name)
         all_rtu = RTU_device.objects.filter(gateway_name=gateway_name)
@@ -92,3 +91,14 @@ def delate(request):
     except Exception as e:
         print(str(e))
         return HttpResponse(json.dumps({'msg': '删除失败：' + str(e)}), content_type='application/json')
+
+
+def attribute(request):
+    """获取属性对照表"""
+    try:
+        with open('../config/attribute.json',encoding='utf-8')as f:
+            data = json.loads(f.read())
+        return HttpResponse(json.dumps({'msg': 'ok', 'data': data}), content_type='application/json')
+    except Exception as e:
+        print(str(e))
+        return HttpResponse(json.dumps({'msg': '获取attribute失败：' + str(e)}), content_type='application/json')
