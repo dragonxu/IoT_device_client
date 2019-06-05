@@ -212,6 +212,16 @@
     },
     mounted() {
       this.get_all_device()
+      if (this.$store.state.current_gateway) {
+        axios
+          .request({
+            url: 'api/gateway/getAll'
+          })
+          .then(response => {
+            if (response.data.msg == 'ok') 
+              this.$store.commit('update_gateway_list', response.data.data)
+          })
+      }
     }
   }
 </script>

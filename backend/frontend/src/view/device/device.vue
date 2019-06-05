@@ -3,7 +3,7 @@
     <!-- <h1>网关： {{ $store.state.current_gateway }}</h1> -->
     <!-- <Button type="text" ></Button><Icon type="ios-cog" size="25"/>选择网关:</Button> -->
     <h1>选择网关：</h1>
-    <Select v-model="$store.state.current_gateway" style="width:200px" icon="ios-cog">
+    <Select v-model="$store.state.current_gateway" style="width:200px" icon="ios-cog"  @on-change='selectGateway'>
         <Option v-for="(item, index) in  $store.state.gateway_list" :value="item" :key="index">{{ item }}</Option>
     </Select>
     <Divider style="padding: 0%"></Divider>
@@ -85,6 +85,10 @@
 
       add_rtu() {
         this.$router.push({ name: 'add_rtu' })
+      },
+      // 下拉选择网关
+      selectGateway(value){
+        this.$store.commit('change_gateway', value)
       }
     },
     // created() {
