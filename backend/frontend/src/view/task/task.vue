@@ -1,5 +1,5 @@
 <template>
-        <div>
+    <div>
         <h1>采集任务</h1>
         <Button type="primary" @click="addTask" icon="md-add-circle" >新建任务</Button>
         <Button type="warning" :disabled="button_disabled" @click='del_confirm=true'>删除</Button>
@@ -59,16 +59,17 @@
                 <Button type="error" size="large" long @click='delateTask' >Delete</Button>
             </div>
           </Modal>
-        </div>
+    </div>
 </template>
       
 <script>
 import axios from '@/libs/api.request'
 import sub_task from './sub_task'
+
 export default {
     name: 'task',
     components:{
-        'v-subtask': sub_task
+        'v-subtask': sub_task,
     },
     data() {
     return {
@@ -179,7 +180,6 @@ export default {
                     },
                     on: {
                         click: () => {
-                            console.log('11111')
                             if(params.row.status == 'false')
                                 {
                                     params.row.status = 'true'
@@ -215,7 +215,6 @@ export default {
                     },
                     on: {
                         click: () => {
-                            console.log('11111')
                             this.$router.push({name: 'sub_task', 
                                 params: {task_name: params.row.name},
                                 query:{

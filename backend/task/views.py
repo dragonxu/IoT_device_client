@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.utils import timezone
 from .models import Gateway_task, TaskRecord
 from gateway.models import GatewayBase
+
+
 # Create your views here.
 
 
@@ -61,32 +63,89 @@ def edit(request):
         return HttpResponse(json.dumps({'msg': '修改失败'}), content_type='application/json')
 
 
-def change_status(request):
-    pass
-
-
 def add_record(request):
-    record = TaskRecord()
     print(request.POST)
+    # try:
+    stop_address = int(request.POST['stop_address'])
+    start_address = int(request.POST['start_address'])
+    record_count = stop_address - start_address + 1
+    function_name = request.POST['function_name'].split(',')
+    identifier = request.POST['identifier'].split(',')
+    gateway = GatewayBase.objects.get(gateway_name=request.POST['gateway'])
+    slave_id = int(request.POST['slave_id'])
+
+    modbus_function_code = request.POST['modbus_function_code']
+    data_length = request.POST['data_length']
+    top_limit = request.POST['top_limit']
+    low_limit = request.POST['low_limit']
+    scale = request.POST['scale']
+    interval = request.POST['interval']
+    send_way = request.POST['send_way']
+    compute = request.POST['compute']
+    for i in range(record_count):
+        TaskRecord.objects.create(
+            gateway=gateway,
+            slave_id=slave_id,
+            function_name=function_name[i],
+            identifier=identifier[i],
+            modbus_function_code=modbus_function_code,
+            start_address=start_address + i,
+            data_length=data_length,
+            top_limit=top_limit,
+            low_limit=low_limit,
+            scale=scale,
+            interval=interval,
+            send_way=send_way,
+            compute=compute,
+            active_status=True
+        )
+    print('插入%s条记录' % record_count)
+    return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
+    # except Exception as e:
+    #     print(e)
+    #     return HttpResponse(json.dumps({'msg': '添加失败' + str(e)}), content_type='application/json')
+
+
+def get_all_record(request):
+    all_record = TaskRecord.objects.all()
+    result = []
+    for i in all_record:
+        result.append({
+            'slave_id': i.slave_id,
+            'modbus_function_code': i.modbus_function_code,
+            "start_address": i.start_address,
+            'identifier': i.identifier,
+            'data_length': i.data_length,
+            'function_name': i.function_name,
+            'compute': i.compute,
+            'send_way': '定时上报' if i.send_way == 'time' else '变更上报',
+            'active_status': 'true' if i.active_status else 'false'
+        })
+    return HttpResponse(json.dumps({'msg': 'ok', 'data': result}), content_type='application/json')
+
+
+def delete_record(request):
     try:
-        record.gateway = GatewayBase.objects.get(gateway_name=request.POST['gateway'])
-        record.slave_id = request.POST['slave_id']
-        record.function_name = request.POST['function_name']
-        record.identifier = request.POST['identifier']
-        record.modbus_function_code = request.POST['modbus_function_code']
-        record.start_address = request.POST['start_address']
-        record.data_length = request.POST['data_length']
-        record.top_limit = request.POST['top_limit']
-        record.low_limit = request.POST['low_limit']
-        record.scale = request.POST['scale']
-        record.interval = request.POST['interval']
-        record.send_way = request.POST['send_way']
-        record.compute = request.POST['compute']
+        slave_id = request.POST['slave_id']
+        start_address = request.POST['start_address']
+        TaskRecord.objects.filter(slave_id=slave_id, start_address=start_address).delete()
+        return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
+    except Exception as e:
+        print(e)
+        return HttpResponse(json.dumps({'msg': '修改失败'}), content_type='application/json')
+
+
+def change_status(request):
+    try:
+        slave_id = request.POST['slave_id']
+        start_address = request.POST['start_address']
+        record = TaskRecord.objects.get(slave_id=slave_id, start_address=start_address)
+        if record.active_status:
+            record.active_status = False
+        else:
+            record.active_status = True
         record.save()
         return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
     except Exception as e:
         print(e)
-        return HttpResponse(json.dumps({'msg': '添加失败'+str(e)}), content_type='application/json')
-
-
-
+        return HttpResponse(json.dumps({'msg': '失败'}), content_type='application/json')

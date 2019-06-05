@@ -7,7 +7,7 @@
       <span slot="close">关</span>
     </i-switch>
     <br />
-    <Button type="primary" icon="md-add-circle" @click="add_show=true" style="margin-left: 10px">添加记录</Button>
+    <Button type="primary" icon="md-add-circle" @click="handleAdd" style="margin-left: 10px">添加记录</Button>
     <Button  @click="exportData(1)" style="margin-left: 10px"
       ><Icon type="ios-download-outline"></Icon>导出源数据</Button
     >
@@ -16,8 +16,8 @@
     >
     <Divider></Divider>
     <Tabs value="name1">
-      <TabPane label="Modbus通讯地址表" name="name1"><v-subtasklist ref="sub"></v-subtasklist></TabPane>
-      <TabPane label="标签二" name="name2">标签二的内容</TabPane>
+        <TabPane label="Modbus通讯地址表" name="name1"><v-subtasklist ref="sub"></v-subtasklist></TabPane>
+        <TabPane label="标签二" name="name2"></TabPane>
     </Tabs>
 
     <Modal v-model="add_show" title="Common Modal dialog box title" :styles="{top: '0px'}" draggable>
@@ -34,12 +34,26 @@
                         <Option v-for="(item, index) in device_list"  :key='item.value' :value="item.value">{{ item.label }}</Option>
                     </Select>
                 </FormItem>
+
+                <FormItem label="起始地址" prop="start_address">
+                    <Row>
+                        <Col span="18">
+                          <Input  v-model="formValidate.start_address" placeholder="寄存器或线圈地址" number></Input>
+                        </Col>
+                        <Col span="4" offset="1">
+                        </Col>
+                    </Row>
                 </FormItem>
-                <FormItem label="起始地址" prop="start_address" number>
-                    <Input  v-model="formValidate.start_address" placeholder="寄存器或线圈地址"></Input>
-                </FormItem>
-                <FormItem label="结束地址" prop="stop_address" number>
-                    <Input  v-model="formValidate.stop_address" placeholder="寄存器或线圈地址"></Input>
+
+                <FormItem label="结束地址" prop="stop_address" >
+                    <Row>
+                        <Col span="18">
+                          <Input  v-model="formValidate.stop_address" placeholder="寄存器或线圈地址" number></Input>
+                        </Col>
+                        <Col span="4" offset="1">
+                            <Button @click="show_attribute=true">详细配置>></Button>
+                        </Col>
+                    </Row>
                 </FormItem>
 
                 <FormItem label="原始数据类型" prop="data_length" number>
@@ -87,49 +101,61 @@
                 <FormItem label="量程下限" prop="low_limit" number>
                     <Input v-model="formValidate.low_limit" placeholder="输入量程下限"></Input>
                 </FormItem>
-                <Poptip trigger="hover" title="提示" word-wrap width="200" 
+                <Poptip trigger="hover" title="提示" word-wrap width="300" 
                   content="可以自定义一个公式来计算最终希望得到的数据，公式中用X代表原始二进制数据解析后的值。">
                     <FormItem label="计算公式" prop="compute">
                         <Input v-model="formValidate.compute" type="textarea" :rows="4" ></Input>
                     </FormItem>
                 </Poptip>
-                
             </Form>
-            
         </Card>
         <div slot="footer">
             <Button type="primary" @click="go_back">确定并返回</Button>
             <!-- <Button @click="add_show=true" style="margin-left: 8px">返回</Button> -->
         </div>
     </Modal>
+    <!--  穿梭框 -->
+    <v-addAttribute :show_attribute='show_attribute'></v-addAttribute>
   </div>
 </template>
 
 <script>
   import axios from '@/libs/api.request'
   import sub_task_list from './sub_task_list.vue'
+  import addAttribute from './addAttribute'
   export default {
     name: 'sub_task',
     props: ['collect_status'],
     components: {
-      'v-subtasklist': sub_task_list
+      'v-subtasklist': sub_task_list,
+      'v-addAttribute': addAttribute
     },
 
     data() {
+      const checkAddress= (rule, value, callback) =>{
+                // 转为整形
+            value = value -0
+            if (!value)
+                callback(new Error('请输入一个整数！'))
+            else
+                callback();
+        };
+
       return {
         attribute: [],
         edit: false,
         add_show: false,
         show_high: false,
+        show_attribute: false,
         device_list: [],
         formValidate:{
           gateway: this.$route.query.gateway,
           slave_id: 1,
-          start_address: '',
-          stop_address: '',
-          function_name: '',
+          start_address: null,
+          stop_address: null,
+          function_name: [],
           modbus_function_code: 3,
-          identifier: '',
+          identifier: [],
           data_length: 16,
           top_limit: -1,
           low_limit: -1,
@@ -139,17 +165,11 @@
           compute: ''
         },
         ruleValidate: {
-          // slave_id: [
-          //       { required: true, message: 'The name cannot be empty', trigger: 'blur' }
-          //   ],
           start_address: [
-              { required: true, message: 'Description cannot be empty', trigger: 'blur' },
+              { required: true, validator: checkAddress, trigger: 'blur' },
           ],
           stop_address: [
-              { required: true, message: 'Description cannot be empty', trigger: 'blur' },
-          ],
-          function_name: [
-              { required: true, message: 'Description cannot be empty', trigger: 'blur' },
+              { required: true, validator: checkAddress, trigger: 'blur' },
           ],
         },
         send_way_list:[
@@ -218,6 +238,11 @@
       }
     },
     methods: {
+      handleAdd(){
+        this.add_show=true
+        this.formValidate.function_name = []
+        this.formValidate.identifier = []
+      },
       go_forward(){
         this.add_show = false
         this.show_high = true
@@ -226,19 +251,6 @@
       go_back(){
         this.show_high = false,
         this.add_show = true
-      },
-      getAttribute() {
-        axios
-          .request({
-            url: 'api/device/getAttribute'
-          })
-          .then(res => {
-            if (res.data.msg == 'ok') this.attribute = res.data.data
-            else this.$Message.success('获取属性表失败！')
-          })
-          .catch(error => {
-            console.log(error)
-          })
       },
 
       getAlldevice(){
@@ -254,13 +266,13 @@
             if (res.data.msg == 'ok'){
               let data = res.data.data
               for(let i in data){
-                this.device_list.push(          
+                this.device_list.push(
                   {
                     value: data[i]['slave'],
                     label: data[i]['name']
                   })
               }
-              console.log('device: ',this.device_list)
+              console.log('device: ', this.device_list)
             }
             else this.$Message.success('获取设备信息失败！')
           })
@@ -273,34 +285,43 @@
           this.$refs[name].validate((valid) => {
               if (valid) {
                 console.log(this.formValidate)
-                    axios.request({
-                        url: 'api/task/addRecord',
-                        method: 'post',
-                        data: this.formValidate
-                    })
-                    .then(res=>{
-                        console.log(res.data)
-                        if(res.data.msg == 'ok')
-                        {
-                          this.add_show = false
-                            // this.get_all_task()
-                          this.$Notice.success({
-                              title: 'Note:',
-                              desc: '成功'
-                              });
-                            }
-                        else
-                        {
-                            this.$Notice.error ({
+                if(this.formValidate.function_name.length != (this.formValidate.stop_address - this.formValidate.start_address+1))
+                {
+                  this.$Notice.error ({
+                    title: 'Note:',
+                    desc: '地址数与标识符数目无法对应！'
+                  })
+                  return
+                }
+                axios.request({
+                    url: 'api/task/addRecord',
+                    method: 'post',
+                    data: this.formValidate
+                  })
+                  .then(res=>{
+                      console.log(res.data)
+                      if(res.data.msg == 'ok')
+                      {
+                        this.add_show = false
+                        this.$refs.sub.get_all_record()
+                          // this.get_all_task()
+                        this.$Notice.success({
                             title: 'Note:',
-                            desc: '创建失败！'
+                            desc: '成功'
                             });
-                        }
-                        
-                    })
-                    .catch(error => {
-                        console.log(error)
-                    })
+                          }
+                      else
+                      {
+                          this.$Notice.error ({
+                          title: 'Note:',
+                          desc: '创建失败！'
+                          });
+                      }
+                      
+                  })
+                  .catch(error => {
+                      console.log(error)
+                  })
                 }
                 else {
                   this.$Message.error('请填写正确参数!');
