@@ -96,7 +96,7 @@ def delate(request):
 def attribute(request):
     """获取属性对照表"""
     try:
-        with open('../config/attribute.json',encoding='utf-8')as f:
+        with open('config/need_attribute.json', encoding='utf-8')as f:
             data = json.loads(f.read())
         return HttpResponse(json.dumps({'msg': 'ok', 'data': data}), content_type='application/json')
     except Exception as e:
