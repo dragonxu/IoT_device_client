@@ -7,4 +7,5 @@ urlpatterns = [
     path('create_rtu', views.create_rtu),
     path('getAll', views.get_all),
     path('delate', views.delate),
+    path('getAttribute', views.attribute),
 ]
