@@ -15,7 +15,8 @@
       </Input>
     </FormItem>
     <FormItem>
-      <Button @click="handleSubmit" type="primary" long>登录</Button>
+      <Button @click="handleSubmit('super_admin')" type="primary" style="margin-left: 10px" >管理员登录</Button>
+      <Button @click="handleSubmit('ordinary')" type="primary" style="margin-left: 50px">游客访问</Button>
     </FormItem>
   </Form>
 </template>
@@ -44,7 +45,7 @@ export default {
     return {
       form: {
         userName: 'super_admin',
-        password: ''
+        password: '123456'
       }
     }
   },
@@ -57,15 +58,24 @@ export default {
     }
   },
   methods: {
-    handleSubmit () {
-      this.$refs.loginForm.validate((valid) => {
-        if (valid) {
+    handleSubmit (id_type) {
+      if(id_type == 'ordinary')
+      {
           this.$emit('on-success-valid', {
-            userName: this.form.userName,
-            password: this.form.password
+            userName: 'admin',
+            password: 'no'
           })
         }
-      })
+      else{
+        this.$refs.loginForm.validate((valid) => {
+          if (valid) {
+            this.$emit('on-success-valid', {
+              userName: this.form.userName,
+              password: this.form.password
+            })
+          }
+        })
+    }
     }
   }
 }
