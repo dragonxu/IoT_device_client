@@ -135,7 +135,7 @@
       const checkAddress= (rule, value, callback) =>{
                 // 转为整形
             value = value -0
-            if (!value)
+            if (isNaN(value))
                 callback(new Error('请输入一个整数！'))
             else
                 callback();
