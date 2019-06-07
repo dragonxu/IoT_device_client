@@ -107,7 +107,12 @@ def add_record(request):
 
 
 def get_all_record(request):
-    all_record = TaskRecord.objects.all()
+    gateway = request.POST.get('gateway')
+    print(gateway, '的记录')
+    if gateway and gateway != 'undefined':
+        all_record = TaskRecord.objects.filter(gateway=gateway)
+    else:
+        all_record = TaskRecord.objects.all()
     result = []
     for i in all_record:
         result.append({
@@ -145,6 +150,18 @@ def change_status(request):
         else:
             record.active_status = True
         record.save()
+        return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
+    except Exception as e:
+        print(e)
+        return HttpResponse(json.dumps({'msg': '失败'}), content_type='application/json')
+
+
+def start_task(request):
+    try:
+        gateway = request.POST['gateway']
+        # 获取所有活跃采集地址
+        all_record = TaskRecord.objects.filter(gateway=gateway, active_status=True)
+
         return HttpResponse(json.dumps({'msg': 'ok'}), content_type='application/json')
     except Exception as e:
         print(e)
