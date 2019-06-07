@@ -10,7 +10,8 @@ export default new Vuex.Store({
   state: {
     current_gateway: '',
     gateway_list: [],
-    selected_device: []
+    selected_device: [],
+    select_attribute: []
     //
   },
   getters:{
@@ -57,8 +58,11 @@ export default new Vuex.Store({
     },
     cleareDevice (state) {
       state.selected_device = []
+    },
+    updataAttribute(state, a_list){
+      state.select_attribute = []
+      state.select_attribute = a_list
     }
-    //
   },
   actions: {
     //

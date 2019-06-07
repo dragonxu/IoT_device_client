@@ -848,15 +848,20 @@ model</ColNames>
       <DataType>bool|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="188" parent="25" name="task_devicetask_gateway_id_37dcad21">
+    <column id="188" parent="25" name="compute">
+      <Position>15</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="189" parent="25" name="task_taskrecord_gateway_id_8b57f34f">
       <ColNames>gateway_id</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="189" parent="25">
+    <key id="190" parent="25">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="190" parent="25">
+    <foreign-key id="191" parent="25">
       <ColNames>gateway_id</ColNames>
       <RefTableName>gateway_gatewaybase</RefTableName>
       <RefColNames>gateway_name</RefColNames>

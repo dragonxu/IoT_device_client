@@ -16,7 +16,8 @@
     >
     <Divider></Divider>
     <Tabs value="name1">
-        <TabPane label="Modbus通讯地址表" name="name1"><v-subtasklist ref="sub"></v-subtasklist></TabPane>
+        <TabPane label="Modbus通讯地址表" name="name1">
+          <v-subtasklist ref="sub"></v-subtasklist></TabPane>
         <TabPane label="标签二" name="name2"></TabPane>
     </Tabs>
 
@@ -133,7 +134,7 @@
 
     data() {
       const checkAddress= (rule, value, callback) =>{
-                // 转为整形
+            // 转为整形
             value = value -0
             if (isNaN(value))
                 callback(new Error('请输入一个整数！'))

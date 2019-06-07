@@ -184,6 +184,23 @@ export default {
                                 {
                                     params.row.status = 'true'
                                     this.collect_status = true
+                                    axios.request({
+                                        url: 'api/task/startTask',
+                                        method: 'post',
+                                        data: {
+                                            gateway: params.row.gateway
+                                        }
+                                    })
+                                    .then(res => {
+                                        console.log(res.data)
+                                        if(res.data.msg=='ok')
+                                          this.$Message.success('成功')
+                                        else
+                                          this.$Message.success('失败')
+                                    })
+                                    .catch(error => {
+                                        console.log(error)
+                                    })
                                 }
                             else{
                                 params.row.status = 'false'

@@ -20,6 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/gateway" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/backend/devices" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/backend/config" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/mqtt" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

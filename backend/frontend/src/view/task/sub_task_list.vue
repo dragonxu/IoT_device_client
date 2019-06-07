@@ -222,6 +222,7 @@
       }
     },
     mounted() {
+      console.log('sub_task_record')
       this.get_all_record()
     }
   }
