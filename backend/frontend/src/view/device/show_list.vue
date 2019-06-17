@@ -25,17 +25,32 @@
         >
       </Col>
     </Row>
+    <Modal
+      draggable
+      v-model="show_recent_data"
+      title="Common Modal dialog box title"
+      @on-ok="show_recent_data=false"
+      @on-cancel="show_recent_data=false">
+        <v-example v-if="show_recent_data" style="height: 310px;"/>
+    </Modal>
+    <!-- <v-example v-if="show_recent_data" style="height: 310px;"/> -->
+    
   </div>
+  
 </template>
 <script>
   //   import {get_all_device} from '@/api/user'
   import axios from '@/libs/api.request'
   import { mapMutations } from 'vuex'
+  import example from './example.vue'
   export default {
-    // props: ['data1'],
+    components:{
+      'v-example': example
+    },
     data() {
       return {
         loading: true,
+        show_recent_data: false,
         data1: [],
         columns1: [
           {
@@ -137,8 +152,7 @@
                     },
                     on: {
                       click: () => {
-                        // this.$store.commit('change_gateway', params.row.gateway_name)
-                        // // console.log(this.$store.state.current_gateway)
+                        this.show_recent_data = true
                          console.log('111111111')
                       }
                     }

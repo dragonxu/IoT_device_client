@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb2d9c65-0cec-47ce-9e33-dd99fcfee373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/IoT_device_client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoT_device_client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d5e64367-00cb-46ff-bfed-d91b55640aad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d5e64367-00cb-46ff-bfed-d91b55640aad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/mqtt_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/mqtt_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/need_attribute.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/need_attribute.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/device/show_list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/device/show_list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/outline/outline.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/outline/outline.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/single-page/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/single-page/home/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/task/sub_task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/task/sub_task.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/task/sub_task_list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/task/sub_task_list.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/task/task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/task/task.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/task/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/task/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/task/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/task/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/src/view/task/addAttribute.vue" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/src/view/task/addAttribute.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mqtt/tb_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mqtt/tb_client.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/task/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="250">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -76,62 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/modbus/total_logic.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="185" column="15" lean-forward="true" selection-start-line="185" selection-start-column="15" selection-end-line="185" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/task/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/devices_rtu_device">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/gateway_mqtttopic">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/task_gateway_task">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/modbus/match_port.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -188,17 +134,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,12 +166,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/manage.py" />
+    <property name="last_opened_file_path" value="E:/oneDrive-business/OneDrive - business/PycharmProjects/portfolio" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -351,17 +297,19 @@
       <workItem from="1559119020878" duration="38537000" />
       <workItem from="1559304260267" duration="51673000" />
       <workItem from="1559553756984" duration="59696000" />
+      <workItem from="1560717440045" duration="721000" />
+      <workItem from="1560723205638" duration="663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159544000" />
+    <option name="totallyTimeSpent" value="160928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16689008" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17091152" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -383,7 +331,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.17895442" />
+      <window_info anchor="right" id="Database" order="3" weight="0.17895442" />
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
   </component>
@@ -473,20 +421,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/task_task">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/bb.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/task_task" />
+    <entry file="file://$PROJECT_DIR$/backend/config/bb.json" />
     <entry file="file://F:/Anaconda3/Lib/site-packages/django/conf/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -514,16 +450,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/devices/create_table.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/devices/create_table.py" />
     <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/devices_attribute">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -667,47 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/task_gateway_task">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modbus/total_logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="185" column="15" lean-forward="true" selection-start-line="185" selection-start-column="15" selection-end-line="185" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/task/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/gateway_mqtttopic">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/devices_rtu_device">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/devices_tcp_device">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -729,20 +615,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/task/views.py">
+    <entry file="file://$PROJECT_DIR$/backend/modbus/match_port.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+        <state relative-caret-position="250">
+          <caret line="64" column="49" lean-forward="true" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modbus/match_port.py">
+    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/task_gateway_task">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/gateway_mqtttopic">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d5e64367-00cb-46ff-bfed-d91b55640aad/schema/main/table/devices_rtu_device">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modbus/total_logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="185" column="15" selection-start-line="185" selection-start-column="15" selection-end-line="185" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/task/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Anaconda3/Lib/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="287" column="8" selection-start-line="287" selection-start-column="8" selection-end-line="287" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/task/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

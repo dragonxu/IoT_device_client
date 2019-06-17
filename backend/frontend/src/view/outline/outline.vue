@@ -19,7 +19,7 @@
     data() {
       return {
         inforCardData: [
-          { title: '当月设备消息量', icon: 'md-locate', count: 232, color: '#19be6b' },
+          { title: '今日设备消息量', icon: 'md-locate', count: 232, color: '#19be6b' },
           { title: '设备在线时长 (分钟)', icon: 'md-help-circle', count: 142, color: '#ff9900' },
           { title: '异常警报', icon: 'md-chatbubbles', count: 12, color: '#E46CBB' },
           { title: '设备总数', icon: 'md-map', count: 14, color: '#9A66E4' }

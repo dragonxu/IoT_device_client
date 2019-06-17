@@ -1,6 +1,6 @@
 <template>
   <!-- 穿梭框 + 抽屉-->
-  <Drawer title="Basic Drawer" :closable="false" v-model="show_attribute" width="500">
+  <Drawer title="Basic Drawer" :mask-closable="false" v-model="show_attribute" width="500">
     <Transfer
       :data="attribute"
       :target-keys="targetKeys1"

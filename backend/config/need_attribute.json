@@ -1,290 +1,290 @@
 [
-  {
-    "label": "AB\u7ebf\u7535\u538b",
-    "key": "Uab"
-  },
-  {
-    "label": "A\u76f8\u529f\u7387\u56e0\u6570",
-    "key": "COSa"
-  },
-  {
-    "label": "A\u76f8\u65e0\u529f\u529f\u7387",
-    "key": "Qa"
-  },
-  {
-    "label": "A\u76f8\u6709\u529f\u529f\u7387",
-    "key": "Pa"
-  },
-  {
-    "label": "A\u76f8\u7535\u538b",
-    "key": "Ua"
-  },
-  {
-    "label": "A\u76f8\u7535\u538b\u603b\u8c10\u6ce2",
-    "key": "UaTHD"
-  },
-  {
-    "label": "A\u76f8\u7535\u6d41",
-    "key": "Ia"
-  },
-  {
-    "label": "A\u76f8\u7535\u6d41\u603b\u8c10\u6ce2",
-    "key": "IaTHD"
-  },
-  {
-    "label": "A\u76f8\u89c6\u5728\u529f\u7387",
-    "key": "Sa"
-  },
-  {
-    "label": "BC\u7ebf\u7535\u538b",
-    "key": "Ubc"
-  },
-  {
-    "label": "B\u76f8\u529f\u7387\u56e0\u6570",
-    "key": "COSb"
-  },
-  {
-    "label": "B\u76f8\u65e0\u529f\u529f\u7387",
-    "key": "Qb"
-  },
-  {
-    "label": "B\u76f8\u6709\u529f\u529f\u7387",
-    "key": "Pb"
-  },
-  {
-    "label": "B\u76f8\u7535\u538b",
-    "key": "Ub"
-  },
-  {
-    "label": "B\u76f8\u7535\u538b\u603b\u8c10\u6ce2",
-    "key": "UbTHD"
-  },
-  {
-    "label": "B\u76f8\u7535\u6d41",
-    "key": "Ib"
-  },
-  {
-    "label": "B\u76f8\u7535\u6d41\u603b\u8c10\u6ce2",
-    "key": "IbTHD"
-  },
-  {
-    "label": "B\u76f8\u89c6\u5728\u529f\u7387",
-    "key": "Sb"
-  },
-  {
-    "label": "CA\u7ebf\u7535\u538b",
-    "key": "Uca"
-  },
-  {
-    "label": "C\u76f8\u529f\u7387\u56e0\u6570",
-    "key": "COSc"
-  },
-  {
-    "label": "C\u76f8\u65e0\u529f\u529f\u7387",
-    "key": "Qc"
-  },
-  {
-    "label": "C\u76f8\u6709\u529f\u529f\u7387",
-    "key": "Pc"
-  },
-  {
-    "label": "C\u76f8\u7535\u538b",
-    "key": "Uc"
-  },
-  {
-    "label": "C\u76f8\u7535\u538b\u603b\u8c10\u6ce2",
-    "key": "UcTHD"
-  },
-  {
-    "label": "C\u76f8\u7535\u6d41",
-    "key": "Ic"
-  },
-  {
-    "label": "C\u76f8\u7535\u6d41\u603b\u8c10\u6ce2",
-    "key": "IcTHD"
-  },
-  {
-    "label": "C\u76f8\u89c6\u5728\u529f\u7387",
-    "key": "Sc"
-  },
-  {
-    "label": "\u4e3b\u56de\u8def\u5f00\u5173\u5408\u95f8\u72b6\u6001",
-    "key": "C_SWITCH"
-  },
-  {
-    "label": "\u4fe1\u53f7\u5f3a\u5ea6",
-    "key": "lqi"
-  },
-  {
-    "label": "\u4fe1\u53f7\u5f3a\u5ea6",
-    "key": "lqi"
-  },
-  {
-    "label": "\u5269\u4f59\u7535\u6d41",
-    "key": "RC"
-  },
-  {
-    "label": "\u56de\u8def\u51fa\u7ebf\u4fa7A\u76f8\u6e29\u5ea6",
-    "key": "T_OUTa"
-  },
-  {
-    "label": "\u56de\u8def\u51fa\u7ebf\u4fa7B\u76f8\u6e29\u5ea6",
-    "key": "T_OUTb"
-  },
-  {
-    "label": "\u56de\u8def\u51fa\u7ebf\u4fa7C\u76f8\u6e29\u5ea6",
-    "key": "T_OUTc"
-  },
-  {
-    "label": "\u603b\u529f\u7387\u56e0\u6570",
-    "key": "COSQ"
-  },
-  {
-    "label": "\u603b\u65e0\u529f\u529f\u7387",
-    "key": "Q"
-  },
-  {
-    "label": "\u603b\u65e0\u529f\u7535\u80fd",
-    "key": "EQ"
-  },
-  {
-    "label": "\u603b\u6709\u529f\u529f\u7387",
-    "key": "P"
-  },
-  {
-    "label": "\u603b\u6709\u529f\u5c16\u7535\u80fd",
-    "key": "EP_1"
-  },
-  {
-    "label": "\u603b\u6709\u529f\u5cf0\u7535\u80fd",
-    "key": "EP_2"
-  },
-  {
-    "label": "\u603b\u6709\u529f\u5e73\u7535\u80fd",
-    "key": "EP_3"
-  },
-  {
-    "label": "\u603b\u6709\u529f\u7535\u80fd",
-    "key": "EP"
-  },
-  {
-    "label": "\u603b\u6709\u529f\u8c37\u7535\u80fd",
-    "key": "EP_4"
-  },
-  {
-    "label": "\u603b\u89c6\u5728\u529f\u7387",
-    "key": "S"
-  },
-  {
-    "label": "\u6269\u5c55\u7f51\u8def\u6807\u8bc6",
-    "key": "EXT_PAN_ID"
-  },
-  {
-    "label": "\u6545\u969c\u4e0a\u62a5",
-    "key": "Error"
-  },
-  {
-    "label": "\u6545\u969c\u4e0a\u62a5",
-    "key": "Error"
-  },
-  {
-    "label": "\u6545\u969c\u4e0a\u62a5",
-    "key": "Error"
-  },
-  {
-    "label": "\u6545\u969c\u4e0a\u62a5",
-    "key": "Error"
-  },
-  {
-    "label": "\u6545\u969c\u4e0a\u62a5",
-    "key": "Error"
-  },
-  {
-    "label": "\u6709\u529f\u9700\u91cf",
-    "key": "Pdmd"
-  },
-  {
-    "label": "\u6e29\u5ea6",
-    "key": "CurrentTemperature"
-  },
-  {
-    "label": "\u6e29\u5ea6",
-    "key": "CurrentTemperature"
-  },
-  {
-    "label": "\u6e7f\u5ea6",
-    "key": "CurrentHumidity"
-  },
-  {
-    "label": "\u6e7f\u5ea6",
-    "key": "CurrentHumidity"
-  },
-  {
-    "label": "\u7535\u6c60\u5269\u4f59\u7535\u91cf",
-    "key": "batpt"
-  },
-  {
-    "label": "\u7535\u6c60\u7535\u91cf",
-    "key": "batpt"
-  },
-  {
-    "label": "\u7535\u6e90\u5f00\u5173\u679a\u4e3e\u578b",
-    "key": "PowerSwitchAll"
-  },
-  {
-    "label": "\u7535\u6e90\u7535\u538b",
-    "key": "voltage"
-  },
-  {
-    "label": "\u7535\u9600\u95e8\u72b6\u6001\u62a5\u544a",
-    "key": "ElectricValueStateNotification"
-  },
-  {
-    "label": "\u7535\u9600\u95e8\u72b6\u6001\u62a5\u544a",
-    "key": "ElectricValueStateNotification"
-  },
-  {
-    "label": "\u7a7a\u6c14\u8d28\u91cf\u6307\u6570",
-    "key": "AQI"
-  },
-  {
-    "label": "\u7cfb\u7edf\u4fe1\u606f",
-    "key": "SystemInfo"
-  },
-  {
-    "label": "\u7d27\u6025\u89e6\u53d1\u62a5\u8b66",
-    "key": "EmergencyTriggerAlarm"
-  },
-  {
-    "label": "\u7ec8\u7aef\u6267\u884c",
-    "key": "Run_program"
-  },
-  {
-    "label": "\u8868\u8ba1\u901a\u8baf\u6545\u969c",
-    "key": "Error"
-  },
-  {
-    "label": "\u8868\u8ba1\u901a\u8baf\u72b6\u6001",
-    "key": "M_STATUS"
-  },
-  {
-    "label": "\u8bbe\u5907\u72b6\u6001",
-    "key": "zsta"
-  },
-  {
-    "label": "\u8bbe\u5907\u72b6\u6001",
-    "key": "zsta"
-  },
-  {
-    "label": "\u9274\u6743\u4fe1\u606f",
-    "key": "Permission"
-  },
-  {
-    "label": "\u9632\u64ac\u62a5\u8b66",
-    "key": "TamperAlarm"
-  },
-  {
-    "label": "\u9891\u7387",
-    "key": "F"
-  }
+	{
+		"label": "AB\u7ebf\u7535\u538b",
+		"key": "Uab"
+	},
+	{
+		"label": "A\u76f8\u529f\u7387\u56e0\u6570",
+		"key": "COSa"
+	},
+	{
+		"label": "A\u76f8\u65e0\u529f\u529f\u7387",
+		"key": "Qa"
+	},
+	{
+		"label": "A\u76f8\u6709\u529f\u529f\u7387",
+		"key": "Pa"
+	},
+	{
+		"label": "A\u76f8\u7535\u538b",
+		"key": "Ua"
+	},
+	{
+		"label": "A\u76f8\u7535\u538b\u603b\u8c10\u6ce2",
+		"key": "UaTHD"
+	},
+	{
+		"label": "A\u76f8\u7535\u6d41",
+		"key": "Ia"
+	},
+	{
+		"label": "A\u76f8\u7535\u6d41\u603b\u8c10\u6ce2",
+		"key": "IaTHD"
+	},
+	{
+		"label": "A\u76f8\u89c6\u5728\u529f\u7387",
+		"key": "Sa"
+	},
+	{
+		"label": "BC\u7ebf\u7535\u538b",
+		"key": "Ubc"
+	},
+	{
+		"label": "B\u76f8\u529f\u7387\u56e0\u6570",
+		"key": "COSb"
+	},
+	{
+		"label": "B\u76f8\u65e0\u529f\u529f\u7387",
+		"key": "Qb"
+	},
+	{
+		"label": "B\u76f8\u6709\u529f\u529f\u7387",
+		"key": "Pb"
+	},
+	{
+		"label": "B\u76f8\u7535\u538b",
+		"key": "Ub"
+	},
+	{
+		"label": "B\u76f8\u7535\u538b\u603b\u8c10\u6ce2",
+		"key": "UbTHD"
+	},
+	{
+		"label": "B\u76f8\u7535\u6d41",
+		"key": "Ib"
+	},
+	{
+		"label": "B\u76f8\u7535\u6d41\u603b\u8c10\u6ce2",
+		"key": "IbTHD"
+	},
+	{
+		"label": "B\u76f8\u89c6\u5728\u529f\u7387",
+		"key": "Sb"
+	},
+	{
+		"label": "CA\u7ebf\u7535\u538b",
+		"key": "Uca"
+	},
+	{
+		"label": "C\u76f8\u529f\u7387\u56e0\u6570",
+		"key": "COSc"
+	},
+	{
+		"label": "C\u76f8\u65e0\u529f\u529f\u7387",
+		"key": "Qc"
+	},
+	{
+		"label": "C\u76f8\u6709\u529f\u529f\u7387",
+		"key": "Pc"
+	},
+	{
+		"label": "C\u76f8\u7535\u538b",
+		"key": "Uc"
+	},
+	{
+		"label": "C\u76f8\u7535\u538b\u603b\u8c10\u6ce2",
+		"key": "UcTHD"
+	},
+	{
+		"label": "C\u76f8\u7535\u6d41",
+		"key": "Ic"
+	},
+	{
+		"label": "C\u76f8\u7535\u6d41\u603b\u8c10\u6ce2",
+		"key": "IcTHD"
+	},
+	{
+		"label": "C\u76f8\u89c6\u5728\u529f\u7387",
+		"key": "Sc"
+	},
+	{
+		"label": "\u4e3b\u56de\u8def\u5f00\u5173\u5408\u95f8\u72b6\u6001",
+		"key": "C_SWITCH"
+	},
+	{
+		"label": "\u4fe1\u53f7\u5f3a\u5ea6",
+		"key": "lqi"
+	},
+	{
+		"label": "\u4fe1\u53f7\u5f3a\u5ea6",
+		"key": "lqi"
+	},
+	{
+		"label": "\u5269\u4f59\u7535\u6d41",
+		"key": "RC"
+	},
+	{
+		"label": "\u56de\u8def\u51fa\u7ebf\u4fa7A\u76f8\u6e29\u5ea6",
+		"key": "T_OUTa"
+	},
+	{
+		"label": "\u56de\u8def\u51fa\u7ebf\u4fa7B\u76f8\u6e29\u5ea6",
+		"key": "T_OUTb"
+	},
+	{
+		"label": "\u56de\u8def\u51fa\u7ebf\u4fa7C\u76f8\u6e29\u5ea6",
+		"key": "T_OUTc"
+	},
+	{
+		"label": "\u603b\u529f\u7387\u56e0\u6570",
+		"key": "COSQ"
+	},
+	{
+		"label": "\u603b\u65e0\u529f\u529f\u7387",
+		"key": "Q"
+	},
+	{
+		"label": "\u603b\u65e0\u529f\u7535\u80fd",
+		"key": "EQ"
+	},
+	{
+		"label": "\u603b\u6709\u529f\u529f\u7387",
+		"key": "P"
+	},
+	{
+		"label": "\u603b\u6709\u529f\u5c16\u7535\u80fd",
+		"key": "EP_1"
+	},
+	{
+		"label": "\u603b\u6709\u529f\u5cf0\u7535\u80fd",
+		"key": "EP_2"
+	},
+	{
+		"label": "\u603b\u6709\u529f\u5e73\u7535\u80fd",
+		"key": "EP_3"
+	},
+	{
+		"label": "\u603b\u6709\u529f\u7535\u80fd",
+		"key": "EP"
+	},
+	{
+		"label": "\u603b\u6709\u529f\u8c37\u7535\u80fd",
+		"key": "EP_4"
+	},
+	{
+		"label": "\u603b\u89c6\u5728\u529f\u7387",
+		"key": "S"
+	},
+	{
+		"label": "\u6269\u5c55\u7f51\u8def\u6807\u8bc6",
+		"key": "EXT_PAN_ID"
+	},
+	{
+		"label": "\u6545\u969c\u4e0a\u62a5",
+		"key": "Error"
+	},
+	{
+		"label": "\u6545\u969c\u4e0a\u62a5",
+		"key": "Error"
+	},
+	{
+		"label": "\u6545\u969c\u4e0a\u62a5",
+		"key": "Error"
+	},
+	{
+		"label": "\u6545\u969c\u4e0a\u62a5",
+		"key": "Error"
+	},
+	{
+		"label": "\u6545\u969c\u4e0a\u62a5",
+		"key": "Error"
+	},
+	{
+		"label": "\u6709\u529f\u9700\u91cf",
+		"key": "Pdmd"
+	},
+	{
+		"label": "\u6e29\u5ea6",
+		"key": "CurrentTemperature"
+	},
+	{
+		"label": "\u6e29\u5ea6",
+		"key": "CurrentTemperature"
+	},
+	{
+		"label": "\u6e7f\u5ea6",
+		"key": "CurrentHumidity"
+	},
+	{
+		"label": "\u6e7f\u5ea6",
+		"key": "CurrentHumidity"
+	},
+	{
+		"label": "\u7535\u6c60\u5269\u4f59\u7535\u91cf",
+		"key": "batpt"
+	},
+	{
+		"label": "\u7535\u6c60\u7535\u91cf",
+		"key": "batpt"
+	},
+	{
+		"label": "\u7535\u6e90\u5f00\u5173\u679a\u4e3e\u578b",
+		"key": "PowerSwitchAll"
+	},
+	{
+		"label": "\u7535\u6e90\u7535\u538b",
+		"key": "voltage"
+	},
+	{
+		"label": "\u7535\u9600\u95e8\u72b6\u6001\u62a5\u544a",
+		"key": "ElectricValueStateNotification"
+	},
+	{
+		"label": "\u7535\u9600\u95e8\u72b6\u6001\u62a5\u544a",
+		"key": "ElectricValueStateNotification"
+	},
+	{
+		"label": "\u7a7a\u6c14\u8d28\u91cf\u6307\u6570",
+		"key": "AQI"
+	},
+	{
+		"label": "\u7cfb\u7edf\u4fe1\u606f",
+		"key": "SystemInfo"
+	},
+	{
+		"label": "\u7d27\u6025\u89e6\u53d1\u62a5\u8b66",
+		"key": "EmergencyTriggerAlarm"
+	},
+	{
+		"label": "\u7ec8\u7aef\u6267\u884c",
+		"key": "Run_program"
+	},
+	{
+		"label": "\u8868\u8ba1\u901a\u8baf\u6545\u969c",
+		"key": "Error"
+	},
+	{
+		"label": "\u8868\u8ba1\u901a\u8baf\u72b6\u6001",
+		"key": "M_STATUS"
+	},
+	{
+		"label": "\u8bbe\u5907\u72b6\u6001",
+		"key": "zsta"
+	},
+	{
+		"label": "\u8bbe\u5907\u72b6\u6001",
+		"key": "zsta"
+	},
+	{
+		"label": "\u9274\u6743\u4fe1\u606f",
+		"key": "Permission"
+	},
+	{
+		"label": "\u9632\u64ac\u62a5\u8b66",
+		"key": "TamperAlarm"
+	},
+	{
+		"label": "\u9891\u7387",
+		"key": "F"
+	}
 ]

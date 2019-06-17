@@ -119,9 +119,7 @@ def Connection(host, port, token, handler):
     _client.on_connect = _onConnection
     _client.on_message = _onMessage
     _client.on_disconnect = _onDisconnect
-
-    _client.connect(host,port);
-
+    _client.connect(host,port)
     _content['handler'] = handler
 
 def start():
